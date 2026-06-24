@@ -1,0 +1,157 @@
+kind: DataContract
+version: 1.0.0
+dataset:
+  domain: Finance
+  name: general_ledger_balances_ytd
+  description: General Ledger Balances Year-To-Date dataset, containing financial
+    information about a company's ledger accounts, including balance and transaction
+    data.
+  schema:
+  - column: gl_balance_ytd_id
+    type: varchar
+    business_name: General Ledger Balance ID
+    description: Unique identifier for the general ledger balance year-to-date record.
+  - column: client
+    type: varchar
+    business_name: Client
+    description: Client identifier, often used to distinguish between different clients
+      or organizations within a company.
+  - column: ledger
+    type: varchar
+    business_name: Ledger
+    description: Ledger identifier, representing a specific ledger account or group
+      of accounts.
+  - column: company_code
+    type: varchar
+    business_name: Company Code
+    description: Code identifying the company or organizational unit responsible for
+      the ledger account.
+  - column: fiscal_year
+    type: varchar
+    business_name: Fiscal Year
+    description: The fiscal year associated with the ledger account, often used for
+      financial reporting and planning.
+  - column: fiscal_period
+    type: varchar
+    business_name: Fiscal Period
+    description: The fiscal period associated with the ledger account, often used
+      for financial reporting and planning.
+  - column: gl_account
+    type: varchar
+    business_name: General Ledger Account
+    description: The general ledger account number, representing a specific account
+      or group of accounts.
+  - column: cost_center
+    type: varchar
+    business_name: Cost Center
+    description: Identifier for the cost center responsible for the ledger account,
+      used for cost accounting and analysis.
+  - column: profit_center
+    type: varchar
+    business_name: Profit Center
+    description: Identifier for the profit center responsible for the ledger account,
+      used for financial reporting and analysis.
+  - column: segment
+    type: varchar
+    business_name: Segment
+    description: Identifier for the business segment associated with the ledger account,
+      used for financial reporting and analysis.
+  - column: business_area
+    type: varchar
+    business_name: Business Area
+    description: Identifier for the business area associated with the ledger account,
+      used for financial reporting and analysis.
+  - column: functional_area
+    type: varchar
+    business_name: Functional Area
+    description: Identifier for the functional area associated with the ledger account,
+      used for financial reporting and analysis.
+  - column: trading_partner
+    type: varchar
+    business_name: Trading Partner
+    description: Identifier for the trading partner associated with the ledger account,
+      used for financial reporting and analysis.
+  - column: partner_profit_center
+    type: varchar
+    business_name: Partner Profit Center
+    description: Identifier for the partner profit center associated with the ledger
+      account, used for financial reporting and analysis.
+  - column: controlling_area
+    type: varchar
+    business_name: Controlling Area
+    description: Identifier for the controlling area responsible for the ledger account,
+      used for cost accounting and analysis.
+  - column: plant
+    type: varchar
+    business_name: Plant
+    description: Identifier for the plant or location associated with the ledger account,
+      used for financial reporting and analysis.
+  - column: pl_or_bs
+    type: varchar
+    business_name: Profit and Loss or Balance Sheet
+    description: Indicator of whether the ledger account is associated with the profit
+      and loss statement or the balance sheet.
+  - column: sales_org
+    type: varchar
+    business_name: Sales Organization
+    description: Identifier for the sales organization associated with the ledger
+      account, used for financial reporting and analysis.
+  - column: dist_channel
+    type: varchar
+    business_name: Distribution Channel
+    description: Identifier for the distribution channel associated with the ledger
+      account, used for financial reporting and analysis.
+  - column: division
+    type: varchar
+    business_name: Division
+    description: Identifier for the division associated with the ledger account, used
+      for financial reporting and analysis.
+  - column: local_currency
+    type: varchar
+    business_name: Local Currency
+    description: The local currency associated with the ledger account, used for financial
+      reporting and analysis.
+  - column: period_debit_doc
+    type: decimal(18,2)
+    business_name: Period Debit in Document Currency
+    description: The total debit amount for the period in the document currency.
+  - column: period_credit_doc
+    type: decimal(18,2)
+    business_name: Period Credit in Document Currency
+    description: The total credit amount for the period in the document currency.
+  - column: period_net_doc
+    type: decimal(18,2)
+    business_name: Period Net in Document Currency
+    description: The total net amount for the period in the document currency.
+  - column: period_debit_local
+    type: decimal(18,2)
+    business_name: Period Debit in Local Currency
+    description: The total debit amount for the period in the local currency.
+  - column: period_credit_local
+    type: decimal(18,2)
+    business_name: Period Credit in Local Currency
+    description: The total credit amount for the period in the local currency.
+  - column: period_net_local
+    type: decimal(18,2)
+    business_name: Period Net in Local Currency
+    description: The total net amount for the period in the local currency.
+  - column: transaction_count
+    type: bigint
+    business_name: Transaction Count
+    description: The total number of transactions for the period.
+  - column: ytd_net_local
+    type: decimal(28,2)
+    business_name: Year-to-Date Net in Local Currency
+    description: The total year-to-date net amount in the local currency.
+  - column: ytd_debit_local
+    type: decimal(28,2)
+    business_name: Year-to-Date Debit in Local Currency
+    description: The total year-to-date debit amount in the local currency.
+  - column: ytd_credit_local
+    type: decimal(28,2)
+    business_name: Year-to-Date Credit in Local Currency
+    description: The total year-to-date credit amount in the local currency.
+  - column: ytd_net_doc
+    type: decimal(28,2)
+    business_name: Year-to-Date Net in Document Currency
+    description: The total year-to-date net amount in the document currency.

@@ -1,0 +1,131 @@
+kind: DataContract
+version: 1.0.0
+dataset:
+  domain: Finance
+  name: general_ledger_balances
+  description: General Ledger Balances dataset contains financial data for various
+    entities, including account balances, transaction counts, and other relevant information.
+  schema:
+  - column: gl_balance_id
+    type: varchar
+    business_name: General Ledger Balance ID
+    description: Unique identifier for the general ledger balance record.
+  - column: entity
+    type: varchar
+    business_name: Entity
+    description: Organizational unit or entity to which the general ledger balance
+      belongs.
+  - column: client
+    type: varchar
+    business_name: Client
+    description: Client or customer associated with the general ledger balance.
+  - column: ledger
+    type: varchar
+    business_name: Ledger
+    description: Ledger or accounting book to which the general ledger balance belongs.
+  - column: company_code
+    type: varchar
+    business_name: Company Code
+    description: Code identifying the company or organization to which the general
+      ledger balance belongs.
+  - column: fiscal_year
+    type: varchar
+    business_name: Fiscal Year
+    description: Fiscal year to which the general ledger balance belongs.
+  - column: fiscal_period
+    type: varchar
+    business_name: Fiscal Period
+    description: Fiscal period to which the general ledger balance belongs.
+  - column: gl_account
+    type: varchar
+    business_name: General Ledger Account
+    description: General ledger account associated with the balance.
+  - column: cost_center
+    type: varchar
+    business_name: Cost Center
+    description: Cost center responsible for the general ledger balance.
+  - column: profit_center
+    type: varchar
+    business_name: Profit Center
+    description: Profit center associated with the general ledger balance.
+  - column: segment
+    type: varchar
+    business_name: Segment
+    description: Segment or business segment to which the general ledger balance belongs.
+  - column: business_area
+    type: varchar
+    business_name: Business Area
+    description: Business area or department associated with the general ledger balance.
+  - column: functional_area
+    type: varchar
+    business_name: Functional Area
+    description: Functional area or team responsible for the general ledger balance.
+  - column: trading_partner
+    type: varchar
+    business_name: Trading Partner
+    description: Trading partner or external entity associated with the general ledger
+      balance.
+  - column: partner_profit_center
+    type: varchar
+    business_name: Partner Profit Center
+    description: Profit center of the trading partner associated with the general
+      ledger balance.
+  - column: controlling_area
+    type: varchar
+    business_name: Controlling Area
+    description: Controlling area or department responsible for managing the general
+      ledger balance.
+  - column: plant
+    type: varchar
+    business_name: Plant
+    description: Plant or location associated with the general ledger balance.
+  - column: pl_or_bs
+    type: varchar
+    business_name: Profit and Loss or Balance Sheet
+    description: Indicator of whether the general ledger balance belongs to the profit
+      and loss statement or balance sheet.
+  - column: sales_org
+    type: varchar
+    business_name: Sales Organization
+    description: Sales organization or team responsible for the general ledger balance.
+  - column: dist_channel
+    type: varchar
+    business_name: Distribution Channel
+    description: Distribution channel or sales channel associated with the general
+      ledger balance.
+  - column: division
+    type: varchar
+    business_name: Division
+    description: Division or business unit to which the general ledger balance belongs.
+  - column: local_currency
+    type: varchar
+    business_name: Local Currency
+    description: Local currency or currency of the general ledger balance.
+  - column: period_debit_doc
+    type: decimal(18,2)
+    business_name: Period Debit in Document Currency
+    description: Total debit amount for the period in the document currency.
+  - column: period_credit_doc
+    type: decimal(18,2)
+    business_name: Period Credit in Document Currency
+    description: Total credit amount for the period in the document currency.
+  - column: period_net_doc
+    type: decimal(18,2)
+    business_name: Period Net in Document Currency
+    description: Net amount for the period in the document currency.
+  - column: period_debit_local
+    type: decimal(18,2)
+    business_name: Period Debit in Local Currency
+    description: Total debit amount for the period in the local currency.
+  - column: period_credit_local
+    type: decimal(18,2)
+    business_name: Period Credit in Local Currency
+    description: Total credit amount for the period in the local currency.
+  - column: period_net_local
+    type: decimal(18,2)
+    business_name: Period Net in Local Currency
+    description: Net amount for the period in the local currency.
+  - column: transaction_count
+    type: bigint
+    business_name: Transaction Count
+    description: Number of transactions associated with the general ledger balance.

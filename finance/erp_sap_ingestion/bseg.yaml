@@ -1,0 +1,297 @@
+dataContractSpecification: "1.1.0"
+
+id: "urn:datacontract:sap:s4:bseg"
+
+info:
+  title: "SAP S/4HANA BSEG Accounting Document Segment"
+  version: "1.0.0"
+  description: >
+    SAP S/4HANA BSEG table containing accounting document line items.
+    Stores detailed financial posting information including GL accounts,
+    customer/vendor postings, tax, currencies, payment information,
+    and controlling dimensions.
+
+  owner: "Finance Data Engineering Team"
+
+servers:
+  production:
+    type: "sap"
+    environment: "prod"
+
+terms:
+  usage: >
+    Internal enterprise financial reporting, reconciliation,
+    audit, and analytics use only.
+
+models:
+
+  bseg:
+    type: "table"
+
+    description: >
+      One record per accounting document line item in SAP FI.
+
+    primaryKey:
+      - mandt
+      - bukrs
+      - gjahr
+      - belnr
+      - buzei
+
+    fields:
+
+      mandt:
+        type: string
+        required: true
+        description: "SAP client."
+
+      bukrs:
+        type: string
+        required: true
+        description: "Company code."
+
+      gjahr:
+        type: string
+        required: true
+        description: "Fiscal year."
+
+      belnr:
+        type: string
+        required: true
+        description: "Accounting document number."
+
+      buzei:
+        type: string
+        required: true
+        description: "Accounting document line item."
+
+      koart:
+        type: string
+        description: "Account type indicator."
+
+      shkzg:
+        type: string
+        description: "Debit/Credit indicator."
+
+      hkont:
+        type: string
+        description: "General ledger account."
+
+      kunnr:
+        type: string
+        description: "Customer account number."
+
+      lifnr:
+        type: string
+        description: "Vendor account number."
+
+      kostl:
+        type: string
+        description: "Cost center."
+
+      prctr:
+        type: string
+        description: "Profit center."
+
+      gsber:
+        type: string
+        description: "Business area."
+
+      segment:
+        type: string
+        description: "Segment for financial reporting."
+
+      aufnr:
+        type: string
+        description: "Internal order number."
+
+      projk:
+        type: string
+        description: "Project identifier."
+
+      matnr:
+        type: string
+        description: "Material number."
+
+      werks:
+        type: string
+        description: "Plant."
+
+      mwskz:
+        type: string
+        description: "Tax code."
+
+      dmbtr:
+        type: number
+        format: decimal
+        precision: 18
+        scale: 2
+        description: "Amount in local currency."
+
+      wrbtr:
+        type: number
+        format: decimal
+        precision: 18
+        scale: 2
+        description: "Amount in document currency."
+
+      pswbt:
+        type: number
+        format: decimal
+        precision: 18
+        scale: 2
+        description: "Amount in update currency."
+
+      menge:
+        type: number
+        format: decimal
+        precision: 18
+        scale: 3
+        description: "Quantity."
+
+      meins:
+        type: string
+        description: "Base unit of measure."
+
+      waers:
+        type: string
+        description: "Document currency."
+
+      hwaer:
+        type: string
+        description: "Local currency."
+
+      xblnr:
+        type: string
+        description: "Reference document number."
+
+      zuonr:
+        type: string
+        description: "Assignment number."
+
+      sgtxt:
+        type: string
+        description: "Line item text."
+
+      zfbdt:
+        type: string
+        description: "Baseline date for due date calculation."
+
+      zterm:
+        type: string
+        description: "Payment terms."
+
+      zlsch:
+        type: string
+        description: "Payment method."
+
+      augbl:
+        type: string
+        description: "Clearing document number."
+
+      augdt:
+        type: string
+        description: "Clearing date."
+
+      rebzg:
+        type: string
+        description: "Invoice reference document."
+
+      rebzj:
+        type: string
+        description: "Invoice reference fiscal year."
+
+      xref1:
+        type: string
+        description: "Reference key 1."
+
+      xref2:
+        type: string
+        description: "Reference key 2."
+
+      xref3:
+        type: string
+        description: "Reference key 3."
+
+      bschl:
+        type: string
+        description: "Posting key."
+
+      umskz:
+        type: string
+        description: "Special G/L indicator."
+
+      anln1:
+        type: string
+        description: "Main asset number."
+
+      anln2:
+        type: string
+        description: "Asset sub-number."
+
+      fkber:
+        type: string
+        description: "Functional area."
+
+      zzsource_system:
+        type: string
+        description: "Source system identifier."
+
+      zzload_timestamp:
+        type: integer
+        format: int64
+        description: "ETL/ELT load timestamp."
+
+quality:
+  type: soda
+
+  checks:
+
+    - name: "primary_key_uniqueness"
+      description: "BSEG composite key must be unique."
+      rule: >
+        duplicate_count(mandt, bukrs, gjahr, belnr, buzei) = 0
+
+    - name: "mandatory_key_fields"
+      description: "Primary key fields cannot be null."
+      rule: >
+        missing_count(mandt) = 0 AND
+        missing_count(bukrs) = 0 AND
+        missing_count(gjahr) = 0 AND
+        missing_count(belnr) = 0 AND
+        missing_count(buzei) = 0
+
+    - name: "valid_debit_credit_indicator"
+      description: "Debit/Credit indicator must be valid."
+      rule: >
+        invalid_count(shkzg NOT IN ('S','H')) = 0
+
+    - name: "currency_amount_validation"
+      description: "Document amount cannot be null."
+      rule: >
+        missing_count(wrbtr) = 0
+
+    - name: "fiscal_year_validation"
+      description: "Fiscal year must be valid."
+      rule: >
+        invalid_count(length(gjahr) <> 4) = 0
+
+servicelevels:
+
+  freshness:
+    threshold: "P1D"
+
+  retention:
+    period: "P7Y"
+
+  availability:
+    percentage: "99.5%"
+
+tags:
+  - sap
+  - s4hana
+  - bseg
+  - finance
+  - fi
+  - accounting
+  - general-ledger

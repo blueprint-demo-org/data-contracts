@@ -1,0 +1,267 @@
+kind: DataContract
+version: 1.0.0
+dataset:
+  domain: Finance
+  name: general_ledger_transactions
+  description: General Ledger Transactions dataset containing financial transaction
+    data for various entities, including companies, clients, and ledgers.
+schema:
+- column: gl_line_id
+  type: varchar
+  business_name: General Ledger Line ID
+  description: Unique identifier for a general ledger line item.
+- column: entity
+  type: varchar
+  business_name: Entity
+  description: Organizational unit or entity responsible for the transaction.
+- column: client
+  type: varchar
+  business_name: Client
+  description: Client or customer associated with the transaction.
+- column: ledger
+  type: varchar
+  business_name: Ledger
+  description: General ledger account or ledger where the transaction is recorded.
+- column: company_code
+  type: varchar
+  business_name: Company Code
+  description: Code identifying the company or organization responsible for the transaction.
+- column: fiscal_year
+  type: varchar
+  business_name: Fiscal Year
+  description: Fiscal year in which the transaction occurred.
+- column: fiscal_period
+  type: varchar
+  business_name: Fiscal Period
+  description: Fiscal period or accounting period in which the transaction occurred.
+- column: document_number
+  type: varchar
+  business_name: Document Number
+  description: Unique identifier for a financial document or transaction.
+- column: document_line
+  type: varchar
+  business_name: Document Line
+  description: Line item within a financial document or transaction.
+- column: debit_credit_indicator
+  type: varchar
+  business_name: Debit/Credit Indicator
+  description: Indicator specifying whether the transaction is a debit or credit.
+- column: fiscyearper
+  type: varchar
+  business_name: Fiscal Year Period
+  description: Combination of fiscal year and period for the transaction.
+- column: posting_date
+  type: varchar
+  business_name: Posting Date
+  description: Date when the transaction was posted to the general ledger.
+- column: document_date
+  type: varchar
+  business_name: Document Date
+  description: Date when the financial document or transaction was created.
+- column: document_type
+  type: varchar
+  business_name: Document Type
+  description: Type of financial document or transaction (e.g., invoice, payment,
+    etc.).
+- column: posting_key
+  type: varchar
+  business_name: Posting Key
+  description: Code or key used to determine the account or ledger where the transaction
+    is posted.
+- column: document_status
+  type: varchar
+  business_name: Document Status
+  description: Current status of the financial document or transaction (e.g., open,
+    closed, etc.).
+- column: line_item_type
+  type: varchar
+  business_name: Line Item Type
+  description: Type of line item within a financial document or transaction (e.g.,
+    header, item, etc.).
+- column: transaction_key
+  type: varchar
+  business_name: Transaction Key
+  description: Unique identifier for a transaction or financial event.
+- column: reference_doc_no
+  type: varchar
+  business_name: Reference Document Number
+  description: Reference to another document or transaction related to the current
+    transaction.
+- column: xreversed
+  type: varchar
+  business_name: Reversal Indicator
+  description: Indicator specifying whether the transaction has been reversed.
+- column: reversal_doc_no
+  type: varchar
+  business_name: Reversal Document Number
+  description: Document number of the reversal transaction.
+- column: reversal_year
+  type: varchar
+  business_name: Reversal Fiscal Year
+  description: Fiscal year of the reversal transaction.
+- column: reversal_line
+  type: varchar
+  business_name: Reversal Line
+  description: Line item of the reversal transaction.
+- column: controlling_area
+  type: varchar
+  business_name: Controlling Area
+  description: Organizational unit responsible for managing and controlling costs.
+- column: cost_center
+  type: varchar
+  business_name: Cost Center
+  description: Code identifying a cost center or department responsible for the transaction.
+- column: profit_center
+  type: varchar
+  business_name: Profit Center
+  description: Code identifying a profit center or business unit responsible for the
+    transaction.
+- column: functional_area
+  type: varchar
+  business_name: Functional Area
+  description: Code identifying a functional area or department responsible for the
+    transaction.
+- column: xbilk
+  type: varchar
+  business_name: Billing Indicator
+  description: Indicator specifying whether the transaction is related to billing
+    or invoicing.
+- column: business_area
+  type: varchar
+  business_name: Business Area
+  description: Code identifying a business area or segment responsible for the transaction.
+- column: segment
+  type: varchar
+  business_name: Segment
+  description: Code identifying a segment or product line responsible for the transaction.
+- column: scntr
+  type: varchar
+  business_name: Sales Channel
+  description: Code identifying the sales channel or distribution channel for the
+    transaction.
+- column: pprctr
+  type: varchar
+  business_name: Profit Center Responsible
+  description: Code identifying the profit center responsible for the transaction.
+- column: sfarea
+  type: varchar
+  business_name: Sales Force Area
+  description: Code identifying the sales force area or region responsible for the
+    transaction.
+- column: trading_partner
+  type: varchar
+  business_name: Trading Partner
+  description: Code identifying the trading partner or business partner involved in
+    the transaction.
+- column: gl_account
+  type: varchar
+  business_name: General Ledger Account
+  description: Code identifying the general ledger account or ledger where the transaction
+    is recorded.
+- column: customer_number
+  type: varchar
+  business_name: Customer Number
+  description: Unique identifier for a customer or client involved in the transaction.
+- column: vendor_number
+  type: varchar
+  business_name: Vendor Number
+  description: Unique identifier for a vendor or supplier involved in the transaction.
+- column: material_number
+  type: varchar
+  business_name: Material Number
+  description: Unique identifier for a material or product involved in the transaction.
+- column: plant
+  type: varchar
+  business_name: Plant
+  description: Code identifying the plant or production facility involved in the transaction.
+- column: internal_order
+  type: varchar
+  business_name: Internal Order
+  description: Unique identifier for an internal order or project involved in the
+    transaction.
+- column: asset_number
+  type: varchar
+  business_name: Asset Number
+  description: Unique identifier for an asset or fixed asset involved in the transaction.
+- column: asset_sub_number
+  type: varchar
+  business_name: Asset Sub-Number
+  description: Sub-number or component of an asset involved in the transaction.
+- column: paobjnr
+  type: varchar
+  business_name: Project Object Number
+  description: Unique identifier for a project object or task involved in the transaction.
+- column: kostl
+  type: varchar
+  business_name: Cost Object
+  description: Code identifying a cost object or cost center involved in the transaction.
+- column: sales_org
+  type: varchar
+  business_name: Sales Organization
+  description: Code identifying the sales organization or sales team involved in the
+    transaction.
+- column: dist_channel
+  type: varchar
+  business_name: Distribution Channel
+  description: Code identifying the distribution channel or sales channel involved
+    in the transaction.
+- column: division
+  type: varchar
+  business_name: Division
+  description: Code identifying the division or business unit involved in the transaction.
+- column: mat_kdgrp
+  type: varchar
+  business_name: Material Group
+  description: Code identifying the material group or product category involved in
+    the transaction.
+- column: mat_mvgr1
+  type: varchar
+  business_name: Material Movement Group
+  description: Code identifying the material movement group or inventory movement
+    involved in the transaction.
+- column: tax_code
+  type: varchar
+  business_name: Tax Code
+  description: Code identifying the tax code or tax rate applied to the transaction.
+- column: taxcountry
+  type: varchar
+  business_name: Tax Country
+  description: Code identifying the country or region where the tax is applied.
+- column: tax_group
+  type: varchar
+  business_name: Tax Group
+  description: Code identifying the tax group or tax category applied to the transaction.
+- column: amt_tax_base_loc
+  type: double
+  business_name: Tax Base Amount Local
+  description: Amount of the tax base in local currency.
+- column: fwbas
+  type: double
+  business_name: Tax Base Amount Foreign
+  description: Amount of the tax base in foreign currency.
+- column: amt_tax_loc
+  type: double
+  business_name: Tax Amount Local
+  description: Amount of tax in local currency.
+- column: curr_trans
+  type: varchar
+  business_name: Transaction Currency
+  description: Currency code for the transaction.
+- column: curr_company_code
+  type: varchar
+  business_name: Company Code Currency
+  description: Currency code for the company code or organization.
+- column: curr_local
+  type: varchar
+  business_name: Local Currency
+  description: Currency code for the local or domestic currency.
+- column: curr_group
+  type: varchar
+  business_name: Group Currency
+  description: Currency code for the group or consolidated currency.
+- column: curr_object
+  type: varchar
+  business_name: Object Currency
+  description: Currency code for the object or asset involved in the transaction.
+- column: curr_profit_center
+  type: varchar
