@@ -1,96 +1,74 @@
 dataContractSpecification: 1.1.0
 id: urn:datacontract:sap:s4:anep
-
 info:
   title: SAP S/4HANA ANEP
   version: 1.1.0
   description: Asset line items table (ANEP) containing asset postings and transactions.
   owner: Finance Data Engineering Team
-
 models:
   anep:
     type: table
-
     fields:
-
-      mandt:
-        type: string
-        description: SAP client.
-        primary_key: true
-
       bukrs:
         type: string
         description: Company code.
         primary_key: true
-
+        required: true
       anln1:
         type: string
         description: Main asset number.
         primary_key: true
-
+        required: true
       anln2:
         type: string
         description: Asset sub-number.
         primary_key: true
-
+        required: true
       gjahr:
         type: string
         description: Fiscal year.
         primary_key: true
-
-      lnrha:
+        required: true
+      lnsan:
         type: string
-        description: Asset document line item.
-        primary_key: true
-
+        description: Auto-added field from Kafka schema.
+        required: true
       afabe:
         type: string
         description: Depreciation area.
-
       bwasl:
         type: string
         description: Transaction type.
-
       bzdat:
         type: string
         description: Posting date.
-
       anbtr:
         type: number
         description: Amount posted.
-
-      business_key:
+      belnr:
         type: string
-        description: Derived business key.
-
-      description:
+        description: Auto-added field from Kafka schema.
+      buzei:
         type: string
-        description: Asset transaction description.
-
-      created_date:
+        description: Auto-added field from Kafka schema.
+      awtyp:
         type: string
-        description: Record creation date.
-
-      changed_date:
+        description: Auto-added field from Kafka schema.
+      aworg:
         type: string
-        description: Last modification date.
-
-      valid_from:
+        description: Auto-added field from Kafka schema.
+      peraf:
         type: string
-        description: Valid from date.
-
-      valid_to:
+        description: Auto-added field from Kafka schema.
+      sgtxt:
         type: string
-        description: Valid to date.
-
-      source_system:
+        description: Auto-added field from Kafka schema.
+      lifnr:
         type: string
-        description: Source SAP system.
-
-      __op:
+        description: Auto-added field from Kafka schema.
+      kunnr:
         type: string
-        description: CDC operation type.
-
-      __ts:
-        type: integer
-        description: CDC processing timestamp.
+        description: Auto-added field from Kafka schema.
+      zuonr:
+        type: string
+        description: Auto-added field from Kafka schema.
